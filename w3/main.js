@@ -1,3 +1,17 @@
+function houseCalculation(houseSize){
+    if (houseSize === "apartment"){
+        carbonPoints += 2;
+    }else if (houseSize === "small"){
+        carbonPoints += 4;
+    }else if (houseSize === "medium"){
+        carbonPoints += 7;
+    }else if (houseSize === "large"){
+        carbonPoints += 10;
+    }
+    console.log(`you have a ${houseSize} sized house which is worth ${carbonPoints} carbon points`)
+}
+
+/*
 function pointsCalculation(numberInHousehold) {
     console.log("inside function");
 
@@ -29,3 +43,11 @@ const numberInHousehold = 1;
 
 pointsCalculation(3);
 pointsCalculation(4);
+*/
+
+
+carbonPoints = 0;
+
+houseCalculation("large")
+
+
