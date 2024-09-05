@@ -8,10 +8,10 @@ function houseCalculation(houseSize){
     }else if (houseSize === "large"){
         carbonPoints += 10;
     }
-    console.log(`you have a ${houseSize} sized house which is worth ${carbonPoints} carbon points`)
+    console.log(`you have a ${houseSize} sized house now you have ${carbonPoints} carbon points`)
 }
 
-/*
+
 function pointsCalculation(numberInHousehold) {
     console.log("inside function");
 
@@ -33,21 +33,15 @@ function pointsCalculation(numberInHousehold) {
         console.log("no upated to points");
     }
 
-    console.log(`based on the number of the house of ${numberInHousehold} the points would be ${carbonPoints}`)
+    console.log(`based on the number of ${numberInHousehold} members the points would be ${carbonPoints}`)
 } 
 
 
 let carbonPoints = 0;
-const numberInHousehold = 1;
+
 
 
 pointsCalculation(3);
-pointsCalculation(4);
-*/
-
-
-carbonPoints = 0;
-
 houseCalculation("large")
 
 
