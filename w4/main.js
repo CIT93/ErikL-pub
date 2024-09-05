@@ -52,12 +52,21 @@ function start(houseHoldMembers, houseSize){
 }
 
 function displayOutput() {
-    
+    for (array of cfpData){
+        console.log(array);
+        const output = document.getElementById("output");
+        const newP = document.createElement("p");
+        newP.textContent = `You live in a ${array[1]} sized house which is worth ${array[3]} carbon footprint points and it occupies ${array[0]} people which is ${array[2]} carbon fooprint points which is a total of ${array[4]} total carbon footprint points `;
+        output.appendChild(newP);
+    }
 }
 
-start(5, "apartment");
-start(4, "medium");
+start(2, "apartment");
+start(6, "medium");
 start(3, "large");
+start(7, "medium");
+start(5, "small");
+
 
 displayOutput()
 
