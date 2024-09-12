@@ -72,7 +72,7 @@ function start(houseHoldMembers, houseSize) {
 
    
 }
-
+//function
 function displayOutput() {
     for (obj of cfpData) {
         console.log(obj)
