@@ -83,8 +83,8 @@ function displayOutput() {
         const newH3 = document.createElement("h3");
         newH3.textContent = `Based on number in and size of home`;
         const newP = document.createElement("p");
-        newP.textContent = `obj number is based on the number of people in the house of ${obj.houseMembers} (score: ${obj.housepts}),`;
-        newP.textContent += `and a ${obj.houseSize} size of home (score:${obj.houseSizePoints}),`;
+        newP.textContent = `this number is based on the number of people in the house of ${obj.houseMembers} (score: ${obj.housepts}),`;
+        newP.textContent += `and a ${obj.houseSize} size of home (score:${obj.houseSizepts}),`;
         output.appendChild(newH2);
         output.appendChild(newH3);
         output.appendChild(newP);
