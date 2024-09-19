@@ -58,7 +58,7 @@ function displayRefactorObj(obj) {
     output.appendChild(newP);
 }
 
-function start(houseHoldMembers, houseSize) {
+function start(houseHoldMembers, houseSize, fName, lName) {
     const housePoints = pointsCalculation(houseHoldMembers);
     const houseSizePoints = houseCalculation(houseSize);
     const total = housePoints + houseSizePoints;
@@ -69,7 +69,10 @@ function start(houseHoldMembers, houseSize) {
         houseSize: houseSize,
         housepts: housePoints,
         houseSizepts: houseSizePoints,
-        carbonTotal: total
+        carbonTotal: total,
+        lastName: lName,
+        firstName: fName
+
         
     });
 
@@ -81,7 +84,7 @@ function displayOutput() {
         console.log(obj)
         const output = document.getElementById("output");
         const newH2 = document.createElement("h2");
-        newH2.textContent = `Carbon Footprint ${obj.carbonTotal}`;
+        newH2.textContent = `${obj.firstName} ${obj.lastName}'s Carbon Footprint is ${obj.carbonTotal}`;
         const newH3 = document.createElement("h3");
         newH3.textContent = `Based on number in and size of home`;
         const newP = document.createElement("p");
@@ -103,7 +106,7 @@ FORM.addEventListener('submit', function(e){
     const lastName = FORM.lastname.value;
     const houseSize= FORM.houses.value;
     const householdMembers = parseInt(FORM.householdmembers.value);
-    start(householdMembers, houseSize);
+    start(householdMembers, houseSize, firstName, lastName);
     OUTPUT.innerHTML = "";
     displayOutput();
     FORM.reset();
