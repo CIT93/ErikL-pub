@@ -39,6 +39,7 @@ function start(houseHoldMembers, houseSize, fName, lName) {
 
         
     });
+    
 
    
 }

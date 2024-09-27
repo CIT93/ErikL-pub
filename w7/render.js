@@ -1,32 +1,58 @@
 const TBL = document.getElementById("tab-data");
 let headerUsed = false;
+const OUTPUT = document.getElementById("output");
+
 
 function renderTbl(data){
-    const table = renderTblheading();
-    const tbody = document.createElement("tbody");
-    const tr = document.createElement("tr");
-    const contentArray = ["Erik", 3, "large", 20]
-    contentArray.forEach(function(text){
-        const td = document.createElement("td");
-        td.textContent = text;
+    
+
+    data.forEach(function(text){
+        const table = renderTblheading();
+        const tbody = document.createElement("tbody");
+        let tr = document.createElement("tr");
+        
+        let td = document.createElement("td");
+        td.textContent = text.firstName;
         tr.appendChild(td);
 
+        td = document.createElement("td");
+        td.textContent = text.houseMembers;
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+        td.textContent = text.houseSize;
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+        td.textContent = text.carbonTotal;
+        tr.appendChild(td);
+        
+        td = document.createElement("td");
+        const buttonEdit = document.createElement("button");
+        const buttonDel = document.createElement("button");
+        buttonDel.textContent = "Delete";
+        buttonEdit.textContent = "Edit";
+
+        td.appendChild(buttonEdit);
+        td.appendChild(buttonDel);
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+        //we got the error because we didnt createElement("td")
+        table.appendChild(tbody);
+
+       
+       TBL.appendChild(table);
     })
-    const td = document.createElement("td");
-    const buttonEdit = document.createElement("button");
-    const buttonDel = document.createElement("button");
-    buttonDel.textContent = "Delete";
-    buttonEdit.textContent = "Edit";
 
-    td.appendChild(buttonEdit);
-    td.appendChild(buttonDel);
-    tr.appendChild(td);
-    tbody.appendChild(tr);
-    //we got the error because we didnt createElement("td")
-    table.appendChild(tbody);
+    
 
 
-    TBL.appendChild(table);
+
+
+
+
+
+    
 }
 
 function  renderTblheading () {
