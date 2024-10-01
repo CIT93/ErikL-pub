@@ -12,6 +12,13 @@ function renderTbl(data){
         //console.log(Object.entries(obj));
         for (const [key,value] of Object.entries(obj)){
             console.log(`key ${key} value ${value}`)
+
+            if (key === "lastName" || key === "housepts" || key === "houseSizepts"){
+                console.log("skip")
+            }
+            else{
+                console.log("make");
+            }
         }
         const tr = document.createElement("tr");
         const tdName = document.createElement("td");
