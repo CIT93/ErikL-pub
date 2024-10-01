@@ -9,34 +9,27 @@ function renderTbl(data){
     
     
     data.forEach(function(obj){
-        //console.log(Object.entries(obj));
+        const tr = document.createElement("tr");
         for (const [key,value] of Object.entries(obj)){
             console.log(`key ${key} value ${value}`)
 
-            //good
+            
             if (key === "lastName" || key === "housepts" || key === "houseSizepts"){
                 console.log("skip")
             }
             else{
-                console.log("make");
+                const td = document.createElement("td");
+                td.textContent = value;
+                tr.appendChild(td);
             }
+            
         }
-        const tr = document.createElement("tr");
-        const tdName = document.createElement("td");
-        tdName.textContent = obj.firstName;
-       
-        const tdTotal = document.createElement("td");
-        tdTotal.textContent = obj.carbonTotal;
-
-        tr.appendChild(tdName);
-        tr.appendChild(tdTotal); 
-        tbody.appendChild(tr)
-
-        
+       tbody.appendChild(tr)   
+       table.appendChild(tbody);
+       TBL.appendChild(table);
     });
 
-    table.appendChild(tbody);
-    TBL.appendChild(table);
+  
 }
 
 function  renderTblheading () {
@@ -46,7 +39,7 @@ function  renderTblheading () {
     const thead = document.createElement("thead")
     const tr = document.createElement("tr")
     //const headingTextArr = ["Name", "HouseHold", "HouseSize", "Footprint", "Actions"];
-    const headingTextArr = ["Name", "Footprint"];
+    const headingTextArr = ["Name", "Household", "HouseSize", "Footprint"];
 
     headingTextArr.forEach(function(text){
         const th = document.createElement("th");

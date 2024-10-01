@@ -29,13 +29,16 @@ function start(houseHoldMembers, houseSize, fName, lName) {
     
 
     cfpData.push({
+        
+        firstName: fName,
+        lastName: lName,
         houseMembers: houseHoldMembers,
         houseSize: houseSize,
         housepts: housePoints,
         houseSizepts: houseSizePoints,
         carbonTotal: total,
-        lastName: lName,
-        firstName: fName
+       
+       
 
         
     });
