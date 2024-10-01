@@ -13,6 +13,7 @@ function renderTbl(data){
         for (const [key,value] of Object.entries(obj)){
             console.log(`key ${key} value ${value}`)
 
+            //good
             if (key === "lastName" || key === "housepts" || key === "houseSizepts"){
                 console.log("skip")
             }
