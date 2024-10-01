@@ -9,6 +9,10 @@ function renderTbl(data){
     
     
     data.forEach(function(obj){
+        //console.log(Object.entries(obj));
+        for (const [key,value] of Object.entries(obj)){
+            console.log(`key ${key} value ${value}`)
+        }
         const tr = document.createElement("tr");
         const tdName = document.createElement("td");
         tdName.textContent = obj.firstName;
