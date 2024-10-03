@@ -1,13 +1,21 @@
 const TBL = document.getElementById("tab-data");
 let headerUsed = false;
 const OUTPUT = document.getElementById("output");
+const FORM = document.getElementById("form");
 
 
 function renderTbl(data) {
+    
+    if (data.length === 0){
+        TBL.innerHTML = "";
+    }
+    else {
     const table = renderTblheading();
     const tbody = createRow(data);
     table.appendChild(tbody);
     TBL.appendChild(table);
+    }
+
 }
 
 function  renderTblheading () {
@@ -38,14 +46,22 @@ function renderTblBtn(index, data){
     btnDel.textContent = "Del";
     td.appendChild(btnEdit);
     td.appendChild(btnDel);
+    
     btnDel.addEventListener('click', function(e){
         console.log(e);
         data.splice(index, 1);
         renderTbl(data);
-
+        console.log(index)
     })
 
     btnEdit.addEventListener('click', function(e){
+        FORM.firstname.value = data[index].firstName;
+        FORM.houses.value = data[index].houseSize;
+        FORM.lastname.value = data[index].lastName;
+        FORM.householdmembers.value = data[index].houseMembers;
+
+        data.splice(index, 1);
+        renderTbl(data);
         
 
 
