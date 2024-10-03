@@ -56,9 +56,7 @@ FORM.addEventListener('submit', function(e){
     const householdMembers = parseInt(FORM.householdmembers.value);
     start(householdMembers, houseSize, firstName, lastName);
     OUTPUT.innerHTML = "";
-    //displayOutput();
     renderTbl(cfpData);
     FORM.reset();
 })
 
-//modules help with long code, my question is should there be a limit of functions in modueles
