@@ -1,0 +1,1 @@
+So far from my understanding with localStorage is that in order to store them right we need to stringify them and that way we can get the data and to get the data back we need to parse.
