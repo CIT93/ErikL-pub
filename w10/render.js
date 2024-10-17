@@ -1,7 +1,7 @@
 import {FORM, TBL} from "./global.js"
-import { saveLS } from "./storage.js";
+import { cfpData, saveLS } from "./storage.js";
 
-const renderTbl = function(data) {
+const renderTbl = data => {
     
     if (data.length === 0){
         TBL.innerHTML = "";
@@ -15,13 +15,12 @@ const renderTbl = function(data) {
 
 }
 
-const renderTblheading = function() {
+const renderTblheading = () => {
 
     TBL.innerHTML = "";
     const table = document.createElement("table")
     const thead = document.createElement("thead")
     const tr = document.createElement("tr")
-    //const headingTextArr = ["Name", "HouseHold", "HouseSize", "Footprint", "Actions"];
     const headingTextArr = ["Name", "Household", "HouseSize", "Footprint", "Action"];
 
     headingTextArr.forEach(function(text){
@@ -35,13 +34,15 @@ const renderTblheading = function() {
     return  table;
 }
 
-const onUpdate = function(index, data){
+
+const onUpdate = (index, data) => {
     data.splice(index, 1);
     saveLS(data)
     renderTbl(data);
 }
 
-const renderTblBtn = function(index, data){
+
+const renderTblBtn = (index, data ) =>{
     const td = document.createElement("td");
     const btnEdit = document.createElement("button");
     const btnDel = document.createElement("button");
@@ -70,7 +71,7 @@ const renderTblBtn = function(index, data){
 }
 
 
-const createRow = function(data){
+const createRow = data => {
     const tbody = document.createElement("tbody");
     data.forEach(function (obj, index) {
         const tr = document.createElement("tr");

@@ -1,4 +1,5 @@
-const houseCalculation = function(houseSize) {
+//default values
+const houseCalculation = (houseSize = "medium") => {
 
     let houseSizePoints = 0;
     if (houseSize === "apartment") {
@@ -14,8 +15,8 @@ const houseCalculation = function(houseSize) {
     return houseSizePoints;
 }
 
-
-const pointsCalculation = function(numberInHousehold) {
+//default values
+const pointsCalculation = (numberInHousehold = "3") => {
 
     let houseHoldPoints = 0;
     if (numberInHousehold === 1) {
