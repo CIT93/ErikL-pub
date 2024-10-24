@@ -3,6 +3,7 @@ import { houseCalculation, pointsCalculation  } from "./carbonfootprint.js";
 import {FORM, FNAME, LNAME, SUBMIT} from "./global.js"
 import {saveLS, cfpData} from "./storage.js"
 
+/*
 //rest parameter
 const start = (...ARGS) => {
     const housePoints = pointsCalculation(ARGS[0]);
@@ -15,6 +16,28 @@ const start = (...ARGS) => {
         lastName: ARGS[3],
         houseMembers: ARGS[0],
         houseSize: ARGS[1],
+        housepts: housePoints,
+        houseSizepts: houseSizePoints,
+        carbonTotal: total,
+       
+       
+        
+    });
+    
+   
+}
+*/
+const start = function(houseHoldMembers, houseSize, fName, lName) {
+    const housePoints = pointsCalculation(houseHoldMembers);
+    const houseSizePoints = houseCalculation(houseSize);
+    const total = housePoints + houseSizePoints;
+    
+    cfpData.push({
+        
+        firstName: fName,
+        lastName: lName,
+        houseMembers: houseHoldMembers,
+        houseSize: houseSize,
         housepts: housePoints,
         houseSizepts: houseSizePoints,
         carbonTotal: total,

@@ -1,0 +1,1 @@
+I understand everything from function and how they are declared and used.
