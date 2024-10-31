@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+    color: whitesmoke;
+    text-align: center; 
+    font-size: 25px;
+    
+}
+
+.box {
+    background-color: black;
+    border: 5px solid #e22b2b;
+    max-width: 500px;
+    margin: 5px auto;
+    
+    
+}
+
+button{
+    background-color: red;
+    color: white;
+    width: 100px;
+    font-size: 20px;
+   
+}
+
