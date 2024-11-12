@@ -1,3 +1,25 @@
+async function start(){
+ try{
+     const data = await fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast')
+     const result = await data.json()
+     onSuccess(result.properties.periods[1].shortForecast)
+ } catch(e){
+    onFailure(e)
+ }  
+}
+
+start()
+
+function onSuccess(result){
+    console.log(result)
+}
+
+function onFailure(result){
+    console.log('Error')
+}
+
+
+
 // function getData(){
 //     return new Promise(resolve =>{
 //         setTimeout(() => {
@@ -47,45 +69,46 @@
 
 
 
-function getData(){
-    return new Promise (function(resolve, reject){
-        setTimeout(() =>{
-            resolve("here is your data")
-            reject("something went wrong")
+// function getData(){
+//     return new Promise (function(resolve, reject){
+//         setTimeout(() =>{
+//             resolve("here is your data")
+//             reject("something went wrong")
             
-        }, 1)
-    })
-}
+//         }, 1)
+//     })
+// }
 
-function onSuccess(){
-    console.log('s')
-}
+// function onSuccess(){
+//     console.log('s')
+// }
 
-function onFailure(){
-    console.log('f')
-}
+// function onFailure(){
+//     console.log('f')
+// }
 
 
 
-async function start(){
-    try{
-      const result = await getData()  
-      onSuccess()
+// async function start(){
+//     try{
+//       const result = await getData()  
+//       onSuccess()
       
-    }catch(error){
-      onFailure()
+//     }catch(error){
+//       onFailure()
       
-    }
+//     }
     
-}
+// }
 
 
-async function start2(){
-    const result = await getData() 
-    .catch(error => {
-        console.log("error")
-    })
-    console.log(result)
-}
+// async function start2(){
+//     const result = await getData() 
+//     .catch(error => {
+//         console.log("error")
+//     })
+//     console.log(result)
+// }
 
-start2()
+// start2()
+
