@@ -1,19 +1,44 @@
 const url = 'https://jsonplaceholder.typicode.com/users'
 
 async function getData(){
-    const response = await fetch(url)
-    const data = await response.json()
     
-    const usernames = document.getElementById("usernames")
     
-        data.forEach(user => {
+    try{
+        const response = await fetch(url)
+        
+        if(response.ok){
+            const data = await response.json()
             
-            const usernameElement = document.createElement('p');
-            usernameElement.textContent = user.username;
-    
+            onSuccess(data)
+        } 
+       }
+
+
+        catch (error)
+        {
+            onError()
+        }
+        
+        
+    }
+
+function onSuccess(data){
+    console.log("Success")
+    data.forEach(user => {
             
-            usernames.appendChild(usernameElement);
-        })
+        const usernameElement = document.createElement('p');
+        usernameElement.textContent = user.username;
+
+        
+        usernames.appendChild(usernameElement);
+    })
 }
+
+function onError(){
+    console.log("Error")
+}
+    
+    
+    
 
 getData()
