@@ -1,5 +1,7 @@
+import {FORM, FNAME, LNAME, SUBMIT} from "./global.js"
+
 class FP {
-constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, waterConsumption){
+constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, waterConsumption, HousePurchases){
     this.first = first
     this.last = last
     this.houseMembers = houseMembers
@@ -7,6 +9,8 @@ constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, waterC
     this.foodChoice = foodChoice
     this.foodSource = foodSource
     this.water = waterConsumption
+    this.HousePurchases = HousePurchases
+    this.calHouseholdPurchases()
     this.calWaterPoints();
     this.calhouseHoldPoints();
     this.calhouseSizePoints();
@@ -15,24 +19,53 @@ constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, waterC
     this.caltotal();
 }
 
-
-calWaterPoints(){
-    if (this.water === "-1"){
-        this.waterPoints = 0;
+calHouseholdPurchases(){
+    if (this.HousePurchases === "0"){
+        this.housePurchasesPoints = 2
+    } else if (this.HousePurchases === "8+"){
+        this.housePurchasesPoints = 10
+    }else if (this.HousePurchases === "5-7"){
+        this.housePurchasesPoints = 8
+    }else if (this.HousePurchases === "3-5"){
+        this.housePurchasesPoints = 6
+    }else if (this.HousePurchases === "1-3"){
+        this.housePurchasesPoints = 4
     }
 
-    else{
-        if (this.water === "10+"){
+    
+}
+
+calWaterPoints(){
+    
+    const Dwasher = document.getElementById("dishwasher").checked
+    const Wmachine = document.getElementById("washingmachine").checked
+
+     if (Dwasher === false){
+        this.waterPoints = 0
+     }    
+     
+     else{
+        if (this.water === "0"){
+            this.waterPoints = 0;
+        } else if (this.water === "10+"){
             this.waterPoints = 3
         } else if (this.water === "4-9"){
             this.waterPoints = 2
         } else if (this.water === "1-3"){
             this.waterPoints = 1
         }
+        
+        if (Dwasher && Wmachine){
+            this.waterPoints *= 2
+         }
 
-    }
+     }
 
-    this.waterPoints *= 2
+     
+     
+
+
+    
 
     
 }
@@ -93,7 +126,7 @@ calFoodSourcePoints(){
 }
 
 caltotal(){
-    this.total = this.houseSizePoints + this.houseHoldPoints + this.foodPoints + this.foodSourcePoints + this.waterPoints
+    this.total = this.houseSizePoints + this.houseHoldPoints + this.foodPoints + this.foodSourcePoints + this.waterPoints + this.housePurchasesPoints
 }
 
 

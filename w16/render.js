@@ -64,7 +64,7 @@ const renderTblBtn = (index, data ) =>{
         FORM.foods.value = data[index].foodChoice;
         FORM.foodSource.value = data[index].foodSource
         FORM.water.value = data[index].water
-        //work
+        FORM.purchases.value = data[index].HousePurchases
         onUpdate(index,data)
         
 
