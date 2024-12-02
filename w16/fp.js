@@ -32,6 +32,8 @@ calWaterPoints(){
 
     }
 
+    this.waterPoints *= 2
+
     
 }
 
