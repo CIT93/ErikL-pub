@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <title>Team Decision</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+    <form id = "form">
+        <fieldset>
+            <legend> Input Team information</legend>
+            <div>
+                <label for="">Team 1 name</label>
+                <input type="text" name="team1name" id="team1name" maxlength = "20" required>
+
+                <label for="">Team 2 name</label>
+                <input type="text" name="team2name" id="team2name" maxlength = "20" required>
+            </div>
+
+            <div>
+                <label> Is team 1 healthy</label>
+                <select name="team1Health" required>
+                    <option value = "">---Team Health---</option>
+                    <option value = "false"> Not healthy</option>
+                    <option value = "true"> Healthy</option>
+
+                </select>
+
+                <label> Is team 2 healthy</label>
+                <select name="team2Health" required>
+                    <option value = "">---Team Health---</option>
+                    <option value = "false"> Not healthy</option>
+                    <option value = "true"> Healthy</option>
+
+                </select>
+            </div>
+
+            <div>
+                <label for="">Team 1 Defense rank</label>
+                <input type="number" name="team1defenserank"  min = "1" max = "32" required>
+
+                <label for="">Team 2 Defense rank</label>
+                <input type="number" name="team2defenserank"  min = "1" max = "32" required>
+            </div>
+            <div>
+                <label for="">Team 1 Offense rank</label>
+                <input type="number" name="team1offenserank"  min = "1" max = "32" required>
+
+                <label for="">Team 2 Offense rank</label>
+                <input type="number" name="team2offenserank"  min = "1" max = "32" required>
+            </div>
+            
+            
+            
+         <button type = "submit">Submit</button>
+         <span id="submitError" class="error"></span>
+        </fieldset>
+
+
+
+        <div id = "result"></div>
+        <div id = "Team1points"></div>
+        <div id = "Team2points"></div>
+
+        
+
+    </form>
+    <div id="tab-data"></div>
+
+<body>
+    
+</body>
+</html>
+
+
+
+

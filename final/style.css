@@ -1,0 +1,33 @@
+html{
+    font-size: 22px;
+    }
+    body {
+        background-color: #333;
+        color: whitesmoke;
+        
+    }
+
+    
+.error{
+    color: red;
+}
+
+table, th, td{
+    border: 1px solid;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+tbody tr:nth-child(odd){
+    background-color: rgb(83, 33, 115);
+}
+
+form {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    text-align: center;
+}
